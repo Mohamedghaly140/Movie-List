@@ -66,8 +66,10 @@ const renderNewMovieElement = (id, title, imageUrl, rating) => {
             <h2>${title}</h2>
             <p>${rating}/5 Stars</p>
         </div>
+        <button class="btn btn--danger btn-delete">Delete</button>
     `;
-    newMovieElement.addEventListener('click', startDeleteMovieHandler.bind(null, id));
+    const deleteMovieButton = newMovieElement.querySelector('.btn-delete');
+    deleteMovieButton.addEventListener('click', startDeleteMovieHandler.bind(null, id));
     const listRoot = document.getElementById('movie-list');
     listRoot.append(newMovieElement);
 };
